@@ -1,0 +1,118 @@
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #02040c;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#app-shell {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#game {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+#ui-root {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+#hud {
+    position: fixed;
+    left: 16px;
+    top: 16px;
+    z-index: 10;
+    min-width: 220px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    pointer-events: auto;
+}
+
+.hud-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#hud b {
+    color: #ffd86b;
+}
+
+.hud-small {
+    margin-top: 8px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+#panels {
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: auto;
+}
+
+.action-btn {
+    min-width: 220px;
+    padding: 10px 12px;
+    border: 0;
+    border-radius: 12px;
+    cursor: pointer;
+    background: rgba(40, 48, 95, 0.95);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.action-btn:hover {
+    background: rgba(53, 62, 120, 0.98);
+}
+
+#notifications {
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.notify {
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    max-width: 260px;
+    font-size: 13px;
+    animation: floatOut 2.4s ease forwards;
+}
+
+@keyframes floatOut {
+    0% { opacity: 0; transform: translateY(-4px); }
+    10% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-18px); }
+}
